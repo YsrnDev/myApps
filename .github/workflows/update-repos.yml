@@ -23,7 +23,7 @@ jobs:
           const https = require('https');
           const username = 'ysrndev';
           const url = `https://api.github.com/users/${username}/repos`;
-
+          
           https.get(url, (res) => {
             let data = '';
             res.on('data', (chunk) => {
@@ -49,3 +49,11 @@ jobs:
             process.exit(1);
           });
         shell: node {0}
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add repos.json
+          git commit -m "Update repos.json" || echo "No changes to commit"
+          git push
