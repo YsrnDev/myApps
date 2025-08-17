@@ -24,7 +24,8 @@ https.get(url, options, (res) => {
       const simpleRepos = repos.map(repo => ({
         name: repo.name,
         html_url: repo.html_url,
-        description: repo.description
+        description: repo.description,
+        language: repo.language
       }));
       fs.writeFileSync('repos.json', JSON.stringify(simpleRepos, null, 2));
       console.log('Successfully created repos.json');
