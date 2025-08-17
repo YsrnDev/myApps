@@ -33,6 +33,7 @@ Salin semua file dari proyek ini ke dalam repositori baru yang telah Anda buat. 
 Buka file `update.js` dan ganti `ysrndev` dengan username GitHub Anda.
 ```javascript
 const username = 'ysrndev'; // Ganti dengan username GitHub Anda
+````
 
 #### B. Atur Izin (Permissions) untuk GitHub Actions
 Agar GitHub Actions dapat mengubah file di repositori Anda, Anda harus memberikan izin tulis (write permission).
