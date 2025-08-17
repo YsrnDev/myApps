@@ -151,8 +151,19 @@ body.dark-mode p {
 .lang-Java { background-color: #b07219; }
 .lang-Ruby { background-color: #701516; }
 
+/* Media query untuk ukuran layar di bawah 600px */
 @media (max-width: 600px) {
-    .grid-view {
-        grid-template-columns: 1fr;
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .controls {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        padding: 10px;
     }
 }
