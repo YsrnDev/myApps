@@ -4,7 +4,14 @@ const https = require('https');
 const username = 'ysrndev'; // Ganti dengan username GitHub Anda
 const url = `https://api.github.com/users/${username}/repos`;
 
-https.get(url, (res) => {
+// Tambahkan opsi dengan User-Agent header
+const options = {
+  headers: {
+    'User-Agent': 'myApps-updater-script' // Anda bisa menggunakan nama apa pun
+  }
+};
+
+https.get(url, options, (res) => {
   let data = '';
   res.on('data', (chunk) => {
     data += chunk;
