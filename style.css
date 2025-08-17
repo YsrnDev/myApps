@@ -44,24 +44,22 @@ h1 {
 
 /* Style for ordered list */
 .list-view {
-  list-style-type: none; /* Hapus nomor bawaan */
-  counter-reset: repo-counter; /* Reset counter */
-  padding-left: 0;
+    list-style-type: none;
+    counter-reset: my-awesome-counter;
+    padding-left: 0;
 }
 .list-view li {
-  counter-increment: repo-counter; /* Naikkan counter */
-  position: relative; /* Penting untuk penempatan nomor absolut */
+    counter-increment: my-awesome-counter;
+    position: relative;
 }
 .list-view li::before {
-  content: counter(repo-counter); /* Tampilkan nomor */
-  font-weight: bold;
-  font-size: 1.2em;
-  color: #999;
-  margin-right: 15px;
-  /* Style untuk penempatan nomor di samping */
-  display: inline-block;
-  width: 25px; /* Sesuaikan lebar sesuai kebutuhan */
-  text-align: right;
+    content: counter(my-awesome-counter) ". ";
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 15px;
+    transform: translateX(-150%);
+    color: #888;
 }
 .list-view li:hover {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
