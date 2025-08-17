@@ -126,3 +126,19 @@ body.dark-mode a {
 body.dark-mode p {
     color: #b0b0b0;
 }
+
+.language-icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.lang-JavaScript { background-color: #f1e05a; }
+.lang-Python { background-color: #3572A5; }
+.lang-HTML { background-color: #e34c26; }
+.lang-CSS { background-color: #563d7c; }
+.lang-Java { background-color: #b07219; }
+.lang-Ruby { background-color: #701516; }
