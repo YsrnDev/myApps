@@ -1,0 +1,59 @@
+name: Update Repos JSON
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Fetch repos and create JSON
+        run: |
+          const fs = require('fs');
+          const https = require('https');
+          const username = 'ysrndev';
+          const url = `https://api.github.com/users/${username}/repos`;
+
+          https.get(url, (res) => {
+            let data = '';
+            res.on('data', (chunk) => {
+              data += chunk;
+            });
+            res.on('end', () => {
+              try {
+                const repos = JSON.parse(data);
+                const simpleRepos = repos.map(repo => ({
+                    name: repo.name,
+                    html_url: repo.html_url,
+                    description: repo.description
+                }));
+                fs.writeFileSync('repos.json', JSON.stringify(simpleRepos, null, 2));
+                console.log('Successfully created repos.json');
+              } catch (error) {
+                console.error('Error parsing JSON:', error);
+                process.exit(1);
+              }
+            });
+          }).on('error', (err) => {
+            console.error('Error fetching data:', err);
+            process.exit(1);
+          });
+        shell: node {0}
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add repos.json
+          git commit -m "Update repos.json" || echo "No changes to commit"
+          git push
