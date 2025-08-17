@@ -1,9 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 20px;
     background-color: #f4f4f4;
     color: #333;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .container {
     max-width: 900px;
@@ -53,7 +53,11 @@ h1 {
     padding: 15px;
     border-left: 5px solid #007bff;
     border-radius: 4px;
-    transition: background 0.3s, border-left 0.3s;
+    transition: all 0.3s ease-in-out;
+}
+.list-view li:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
 }
 .list-view li a {
     text-decoration: none;
@@ -83,7 +87,11 @@ h1 {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: background 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease-in-out;
+}
+.grid-view li:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
 }
 .grid-view li a {
     text-decoration: none;
@@ -142,3 +150,9 @@ body.dark-mode p {
 .lang-CSS { background-color: #563d7c; }
 .lang-Java { background-color: #b07219; }
 .lang-Ruby { background-color: #701516; }
+
+@media (max-width: 600px) {
+    .grid-view {
+        grid-template-columns: 1fr;
+    }
+}
