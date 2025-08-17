@@ -48,9 +48,6 @@ function renderRepos(repos) {
     repos.forEach((repo, index) => { // Tambahkan 'index' di sini
         const listItem = document.createElement('li');
         
-        repoNumber.style.fontWeight = 'bold';
-        repoNumber.style.marginRight = '5px';
-        
         const repoLink = document.createElement('a');
         repoLink.href = repo.html_url;
         repoLink.textContent = repo.name;
