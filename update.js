@@ -2,7 +2,7 @@ const fs = require('fs');
 const https = require('https');
 
 const username = 'ysrndev'; // Ganti dengan username GitHub Anda
-const url = `https://api.github.com/users/${username}/repos`;
+const url = `https://api.github.com/users/${username}/repos?type=owner`;
 
 // Tambahkan opsi dengan User-Agent header
 const options = {
