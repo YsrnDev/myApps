@@ -1,7 +1,7 @@
 const fs = require('fs');
 const https = require('https');
 
-const username = 'ysrndev';
+const username = 'ysrndev'; // Pastikan ini username GitHub Anda
 const url = `https://api.github.com/users/${username}/repos?type=owner`;
 
 const options = {
@@ -18,15 +18,18 @@ https.get(url, options, (res) => {
   res.on('end', () => {
     try {
       const repos = JSON.parse(data);
-      const filteredRepos = repos.filter(repo => 
-        !repo.fork && repo.name !== `${username.toLowerCase()}.github.io`
-      );
-      const simpleRepos = repos.map(repo => ({
+
+      const filteredRepos = repos.filter(repo => {
+        return !repo.fork && repo.name !== `${username.toLowerCase()}.github.io`;
+      });
+      
+      const simpleRepos = filteredRepos.map(repo => ({
         name: repo.name,
         html_url: repo.html_url,
         description: repo.description,
         language: repo.language
       }));
+      
       fs.writeFileSync('repos.json', JSON.stringify(simpleRepos, null, 2));
       console.log('Successfully created repos.json');
     } catch (error) {
