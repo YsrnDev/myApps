@@ -45,7 +45,7 @@ function renderRepos(repos) {
         return;
     }
     
-    repos.forEach((repo, index) => { // Tambahkan 'index' di sini
+    repos.forEach((repo) => {
         const listItem = document.createElement('li');
         
         const repoLink = document.createElement('a');
