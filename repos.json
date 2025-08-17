@@ -12,18 +12,6 @@
     "language": "HTML"
   },
   {
-    "name": "hoyolab-auto-daily",
-    "html_url": "https://github.com/YsrnDev/hoyolab-auto-daily",
-    "description": "Easiest, full free, and no BS Hoyolab daily check-in using GitHub Actions. Supports Zenless Zone Zero, Honkai: Star Rail, Genshin Impact, Honkai Impact 3rd, and Tears of Themis.",
-    "language": "JavaScript"
-  },
-  {
-    "name": "lightweight-charts",
-    "html_url": "https://github.com/YsrnDev/lightweight-charts",
-    "description": "Performant financial charts built with HTML5 canvas",
-    "language": null
-  },
-  {
     "name": "moonton",
     "html_url": "https://github.com/YsrnDev/moonton",
     "description": null,
@@ -52,11 +40,5 @@
     "html_url": "https://github.com/YsrnDev/simple-portfolio",
     "description": null,
     "language": "HTML"
-  },
-  {
-    "name": "ysrndev.github.io",
-    "html_url": "https://github.com/YsrnDev/ysrndev.github.io",
-    "description": "Hanya berisi untuk menampilkan list aplikasi dari github",
-    "language": "JavaScript"
   }
 ]
