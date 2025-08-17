@@ -45,8 +45,14 @@ function renderRepos(repos) {
         return;
     }
     
-    repos.forEach(repo => {
+    repos.forEach((repo, index) => { // Tambahkan 'index' di sini
         const listItem = document.createElement('li');
+        
+        // Buat elemen untuk nomor urut
+        const repoNumber = document.createElement('span');
+        repoNumber.textContent = `${index + 1}. `; // Tambahkan 1 karena indeks mulai dari 0
+        repoNumber.style.fontWeight = 'bold';
+        repoNumber.style.marginRight = '5px';
         
         const repoLink = document.createElement('a');
         repoLink.href = repo.html_url;
@@ -62,7 +68,8 @@ function renderRepos(repos) {
 
         const repoDescription = document.createElement('p');
         repoDescription.textContent = repo.description || 'Tidak ada deskripsi.';
-        
+
+        listItem.appendChild(repoNumber);
         listItem.appendChild(repoLink);
         listItem.appendChild(repoDescription);
         repoList.appendChild(listItem);
