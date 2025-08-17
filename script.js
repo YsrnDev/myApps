@@ -45,9 +45,8 @@ function renderRepos(repos) {
         return;
     }
     
-    repos.forEach((repo) => {
+    repos.forEach(repo => {
         const listItem = document.createElement('li');
-        
         const repoLink = document.createElement('a');
         repoLink.href = repo.html_url;
         repoLink.textContent = repo.name;
