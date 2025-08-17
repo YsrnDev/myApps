@@ -47,21 +47,21 @@ function renderRepos(repos) {
     
     repos.forEach(repo => {
         const listItem = document.createElement('li');
+        
         const repoLink = document.createElement('a');
         repoLink.href = repo.html_url;
         repoLink.textContent = repo.name;
         repoLink.target = "_blank";
         
-        // Buat elemen untuk ikon bahasa
         if (repo.language) {
             const langIcon = document.createElement('span');
-            langIcon.className = `language-icon lang-${repo.language.replace(/ /g, '')}`; // Tambahkan kelas CSS
-            repoLink.prepend(langIcon); // Tambahkan ikon di depan nama repo
+            langIcon.className = `language-icon lang-${repo.language.replace(/ /g, '')}`;
+            repoLink.prepend(langIcon);
         }
 
         const repoDescription = document.createElement('p');
         repoDescription.textContent = repo.description || 'Tidak ada deskripsi.';
-
+        
         listItem.appendChild(repoLink);
         listItem.appendChild(repoDescription);
         repoList.appendChild(listItem);
