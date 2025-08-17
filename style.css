@@ -156,14 +156,15 @@ body.dark-mode p {
     h1 {
         font-size: 1.8em;
     }
-
     .controls {
         text-align: center;
         margin-top: 10px;
         margin-bottom: 20px;
     }
-
     .container {
         padding: 10px;
+    }
+    .grid-view {
+        grid-template-columns: 1fr;
     }
 }
