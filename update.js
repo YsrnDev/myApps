@@ -1,13 +1,12 @@
 const fs = require('fs');
 const https = require('https');
 
-const username = 'ysrndev'; // Ganti dengan username GitHub Anda
+const username = 'ysrndev';
 const url = `https://api.github.com/users/${username}/repos?type=owner`;
 
-// Tambahkan opsi dengan User-Agent header
 const options = {
   headers: {
-    'User-Agent': 'myApps-updater-script' // Anda bisa menggunakan nama apa pun
+    'User-Agent': 'myApps-updater-script'
   }
 };
 
@@ -19,6 +18,9 @@ https.get(url, options, (res) => {
   res.on('end', () => {
     try {
       const repos = JSON.parse(data);
+      const filteredRepos = repos.filter(repo => 
+        !repo.fork && repo.name !== `${username.toLowerCase()}.github.io`
+      );
       const simpleRepos = repos.map(repo => ({
         name: repo.name,
         html_url: repo.html_url,
