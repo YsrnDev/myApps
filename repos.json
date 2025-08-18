@@ -18,6 +18,12 @@
     "language": "PHP"
   },
   {
+    "name": "portfolio-simple",
+    "html_url": "https://github.com/YsrnDev/portfolio-simple",
+    "description": "My portfolio simple",
+    "language": "CSS"
+  },
+  {
     "name": "portfolio-tailwind-css",
     "html_url": "https://github.com/YsrnDev/portfolio-tailwind-css",
     "description": "My Portfolio Using Tailwind CSS.",
