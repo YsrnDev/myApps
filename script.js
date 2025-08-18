@@ -50,7 +50,7 @@ function renderRepos(repos) {
     return;
   }
 
-  repos.forEach((repo) => {
+   repos.forEach((repo, index) => { // Tambahkan 'index' di sini
     const listItem = document.createElement("li");
 
     const repoLink = document.createElement("a");
@@ -73,6 +73,11 @@ function renderRepos(repos) {
     listItem.appendChild(repoLink);
     listItem.appendChild(repoDescription);
     repoList.appendChild(listItem);
+
+        setTimeout(() => {
+            listItem.style.opacity = '1';
+            listItem.style.transform = 'translateY(0)';
+        }, index * 200);
   });
 }
 
