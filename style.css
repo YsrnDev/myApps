@@ -1,176 +1,176 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
-    color: #333;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  font-family: "Poppins", sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+  color: #333;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .container {
-    max-width: 900px;
-    margin: auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: background 0.3s, box-shadow 0.3s;
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 h1 {
-    color: #555;
-    text-align: center;
+  color: #555;
+  text-align: center;
 }
 .controls {
-    text-align: right;
-    margin-bottom: 20px;
+  text-align: right;
+  margin-bottom: 20px;
 }
 .controls button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-left: 5px;
-    font-size: 1.2em;
-    width: 40px;
-    height: 40px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 5px;
+  font-size: 1.2em;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
 }
 .controls button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
-
-/* Style for ordered list */
 .list-view {
-    list-style-type: none;
-    counter-reset: my-awesome-counter;
-    padding-left: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
+/* Gaya Tampilan List */
 .list-view li {
-    counter-increment: my-awesome-counter;
-    position: relative;
-}
-.list-view li::before {
-    content: counter(my-awesome-counter) ". ";
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    top: 15px;
-    transform: translateX(-150%);
-    color: #888;
+  background: #eee;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-left: 5px solid #007bff;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
 }
 .list-view li:hover {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
 }
 .list-view li a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
 }
 .list-view li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .list-view li p {
-    margin: 5px 0 0;
-    font-size: 0.9em;
-    color: #666;
-    transition: color 0.3s;
+  margin: 5px 0 0;
+  font-size: 0.9em;
+  color: #666;
+  transition: color 0.3s;
 }
-
 /* Gaya Tampilan Grid */
 .grid-view {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    list-style-type: none;
-    padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
 }
 .grid-view li {
-    background: #eee;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: all 0.3s ease-in-out;
+  background: #eee;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 .grid-view li:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
 }
 .grid-view li a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
 }
 .grid-view li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .grid-view li p {
-    font-size: 0.9em;
-    color: #666;
-    margin: 0;
-    transition: color 0.3s;
+  font-size: 0.9em;
+  color: #666;
+  margin: 0;
+  transition: color 0.3s;
 }
-
 /* Mode Gelap (Dark Mode) */
 body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
+  background-color: #121212;
+  color: #e0e0e0;
 }
 body.dark-mode .container {
-    background: #1e1e1e;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  background: #1e1e1e;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 body.dark-mode h1 {
-    color: #fff;
+  color: #fff;
 }
 body.dark-mode .list-view li {
-    background: #2a2a2a;
-    border-left: 5px solid #00c6ff;
+  background: #2a2a2a;
+  border-left: 5px solid #00c6ff;
 }
 body.dark-mode .grid-view li {
-    background: #2a2a2a;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background: #2a2a2a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 body.dark-mode a {
-    color: #00c6ff;
+  color: #00c6ff;
 }
 body.dark-mode p {
-    color: #b0b0b0;
+  color: #b0b0b0;
 }
-
 .language-icon {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin-right: 5px;
-    vertical-align: middle;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
 }
-
-.lang-JavaScript { background-color: #f1e05a; }
-.lang-Python { background-color: #3572A5; }
-.lang-HTML { background-color: #e34c26; }
-.lang-CSS { background-color: #563d7c; }
-.lang-Java { background-color: #b07219; }
-.lang-Ruby { background-color: #701516; }
-
+.lang-JavaScript {
+  background-color: #f1e05a;
+}
+.lang-Python {
+  background-color: #3572a5;
+}
+.lang-HTML {
+  background-color: #e34c26;
+}
+.lang-CSS {
+  background-color: #563d7c;
+}
+.lang-Java {
+  background-color: #b07219;
+}
+.lang-Ruby {
+  background-color: #701516;
+}
 /* Media query untuk ukuran layar di bawah 600px */
 @media (max-width: 600px) {
-    h1 {
-        font-size: 1.8em;
-    }
-    .controls {
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
-    .container {
-        padding: 10px;
-    }
-    .grid-view {
-        grid-template-columns: 1fr;
-    }
+  h1 {
+    font-size: 1.8em;
+  }
+  .controls {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .container {
+    padding: 10px;
+  }
+  .grid-view {
+    grid-template-columns: 1fr;
+  }
 }

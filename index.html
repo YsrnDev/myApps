@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daftar Aplikasi Saya</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
-        <h1>Daftar Aplikasi dan Proyek Saya</h1>
+      <h1>Daftar Aplikasi dan Proyek Saya</h1>
 
-        <div class="controls">
-            <button onclick="setView('list')" title="Tampilan List">
-                <i class="fas fa-list"></i>
-            </button>
-            <button onclick="setView('grid')" title="Tampilan Grid">
-                <i class="fas fa-th-large"></i>
-            </button>
-            <button onclick="toggleTheme()" id="theme-toggle" title="Ubah Mode">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-        
-         <ul id="repo-list" class="list-view">
-        </ul>
+      <div class="controls">
+        <button onclick="setView('list')" title="Tampilan List">
+          <i class="fas fa-list"></i>
+        </button>
+        <button onclick="setView('grid')" title="Tampilan Grid">
+          <i class="fas fa-th-large"></i>
+        </button>
+        <button onclick="toggleTheme()" id="theme-toggle" title="Ubah Mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+
+      <ul id="repo-list" class="list-view"></ul>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
