@@ -174,3 +174,30 @@ body.dark-mode p {
     grid-template-columns: 1fr;
   }
 }
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #888;
+    border-top: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+footer a {
+    text-decoration: none;
+    color: #888;
+    transition: color 0.3s ease-in-out;
+}
+footer a:hover {
+    color: #007bff;
+
+}
+body.dark-mode footer {
+    color: #b0b0b0;
+    border-top: 1px solid #333;
+}
