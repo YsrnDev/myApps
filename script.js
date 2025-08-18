@@ -1,4 +1,6 @@
 const themeToggleBtn = document.getElementById("theme-toggle");
+const searchInput = document.getElementById("search-input");
+let allRepos = [];
 
 // Fungsi untuk menerapkan tema
 function applyTheme(theme) {
@@ -73,6 +75,40 @@ function renderRepos(repos) {
     repoList.appendChild(listItem);
   });
 }
+
+// Fungsi untuk memfilter repositori
+function filterRepos() {
+  const searchTerm = searchInput.value.toLowerCase();
+  const filteredRepos = allRepos.filter((repo) => {
+    const repoName = repo.name.toLowerCase();
+    const repoDesc = repo.description ? repo.description.toLowerCase() : "";
+
+    return repoName.includes(searchTerm) || repoDesc.includes(searchTerm);
+  });
+
+  renderRepos(filteredRepos);
+}
+
+// Ambil data repositori dari file JSON lokal
+fetch("repos.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
+  .then((repos) => {
+    allRepos = repos; // Simpan data repositori ke variabel global
+    renderRepos(allRepos);
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+    const repoList = document.getElementById("repo-list");
+    repoList.innerHTML = "<li>Gagal memuat daftar aplikasi.</li>";
+  });
+
+// Event listener untuk kotak pencarian
+searchInput.addEventListener("input", filterRepos);
 
 // Fungsi untuk beralih tampilan (list/grid)
 function setView(viewType) {

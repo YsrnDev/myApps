@@ -17,13 +17,46 @@ body {
 h1 {
   color: #555;
   text-align: center;
+  padding-bottom: 40px;
+  margin-bottom: -20px;
+  border-bottom: 1px solid #ffffff71;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+  margin-top: 20px;
+}
+.search-container {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+#search-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1em;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+#search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+body.dark-mode #search-input {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
 }
 .controls {
-  text-align: right;
-  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
 }
 .controls button {
-  background-color: #007bff;
+  background-color: #00c6ff;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -45,6 +78,7 @@ h1 {
   list-style-type: none;
   padding-left: 0;
 }
+
 /* Gaya Tampilan List */
 .list-view li {
   background: #eee;
@@ -72,6 +106,7 @@ h1 {
   color: #666;
   transition: color 0.3s;
 }
+
 /* Gaya Tampilan Grid */
 .grid-view {
   display: grid;
@@ -105,6 +140,7 @@ h1 {
   margin: 0;
   transition: color 0.3s;
 }
+
 /* Mode Gelap (Dark Mode) */
 body.dark-mode {
   background-color: #121212;
@@ -131,6 +167,7 @@ body.dark-mode a {
 body.dark-mode p {
   color: #b0b0b0;
 }
+
 .language-icon {
   display: inline-block;
   width: 12px;
@@ -157,47 +194,68 @@ body.dark-mode p {
 .lang-Ruby {
   background-color: #701516;
 }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #888;
+  border-top: 1px solid #35353546;
+  transition: all 0.3s ease-in-out;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+footer a {
+  text-decoration: none;
+  color: #888;
+  transition: color 0.3s ease-in-out;
+}
+footer a:hover {
+  color: #007bff;
+  color: #b0b0b0;
+  border-top: 1px solid #333;
+}
+
 /* Media query untuk ukuran layar di bawah 600px */
 @media (max-width: 600px) {
   h1 {
     font-size: 1.8em;
-  }
-  .controls {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    border-bottom: transparent;
   }
   .container {
     padding: 10px;
   }
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+  }
+  .search-container {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  #search-input {
+    max-width: 250px;
+  }
+  .controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .controls button {
+    width: 30px;
+    height: 30px;
+      font-size: 1.1em;
+      margin-left: 0px;
+  }
   .grid-view {
     grid-template-columns: 1fr;
   }
-}
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    font-size: 0.9em;
-    color: #888;
-    border-top: 1px solid #ccc;
-    transition: all 0.3s ease-in-out;
-}
-a {
-    text-decoration: none;
-    color: inherit;
-}
-footer a {
-    text-decoration: none;
-    color: #888;
-    transition: color 0.3s ease-in-out;
-}
-footer a:hover {
-    color: #007bff;
-
-}
-body.dark-mode footer {
-    color: #b0b0b0;
-    border-top: 1px solid #333;
 }

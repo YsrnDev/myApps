@@ -19,29 +19,30 @@
   <body>
     <div class="container">
       <h1>Daftar Aplikasi dan Proyek Saya</h1>
-
-      <div class="controls">
-        <button onclick="setView('list')" title="Tampilan List">
-          <i class="fas fa-list"></i>
-        </button>
-        <button onclick="setView('grid')" title="Tampilan Grid">
-          <i class="fas fa-th-large"></i>
-        </button>
-        <button onclick="toggleTheme()" id="theme-toggle" title="Ubah Mode">
-          <i class="fas fa-moon"></i>
-        </button>
+      <div class="header-container">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Cari proyek..." />
+        </div>
+        <div class="controls">
+          <button onclick="setView('list')" title="Tampilan List">
+            <i class="fas fa-list"></i>
+          </button>
+          <button onclick="setView('grid')" title="Tampilan Grid">
+            <i class="fas fa-th-large"></i>
+          </button>
+          <button onclick="toggleTheme()" id="theme-toggle" title="Ubah Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
       </div>
-
       <ul id="repo-list" class="list-view"></ul>
     </div>
-
     <footer>
       <p>
         Made with ❤️ by
         <a href="https://github.com/ysrndev" target="_blank">YSRNDEV</a>
       </p>
     </footer>
-
     <script src="script.js"></script>
   </body>
 </html>
